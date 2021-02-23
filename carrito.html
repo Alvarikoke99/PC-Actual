@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="plantilla.css"/>
+        <script src="script.js"></script>
+        <title>PC Actual | Carrito</title>
+    </head>
+    <body>
+        <div class="cabecera">
+            <img id="logo" src="resources/logo.png" alt="logo">
+        </div>
+
+        <div class="topnav">
+            <a class="enlace" href="index.html">Inicio</a>
+            <a class="enlace" href="categorias.html">Categorías</a>
+            <a class="enlace" href="configurador.html">Configurador</a>
+            <a class="enlace" href="componentes.html">Componentes</a>
+            <a class="enlace" href="ordenadores.html">Ordenadores</a>
+            <a class="enlace" href="perifericos.html">Periféricos</a>
+            <a class="enlace" href="login.html">Iniciar sesión</a>
+            <a class="enlace" href="micuenta.html">Mi cuenta</a>
+            <a class="carrito" href="carrito.html"><img src="resources/carrito.png" alt="logo" width=54 height=54></a>
+            <form>
+                <input type="search" name="busqueda" placeholder="Buscar...">
+            </form>
+        </div>
+
+        <h2 class="seccion">Artículos en el carrito:</h2>
+        <div class="fila">
+            <div class="columna" id="item1">
+                <img src="resources/r3700x.jpg" alt="articulo1" width=300 height=300>
+                <p class="articulo">Ryzen 7 3700X</p>
+                <h2 class="precio">319,90€</h2>
+                <form>
+                    <label for="num1">Cantidad:</label><br>
+                    <input type="number" id="num1" name="num" value="1" min="1" onchange="actualizarTotalCarrito('total')">
+                    <input type="button" value="Borrar" 
+                        onclick="document.getElementById('item1').remove();
+                        actualizarTotalCarrito('total')">
+                </form>
+            </div>
+            
+            <div class="columna" id="item2">
+                <img src="resources/msi-mpg-b550-gaming-plus.jpg" alt="articulo2" width=300 height=300>
+                <p class="articulo">MSI B550 GAMING PLUS</p>
+                <h2 class="precio" id="precio2">149,89€</h2>
+                <form>
+                    <label for="num2">Cantidad:</label><br>
+                    <input type="number" id="num2" name="num" value="1" min="1" onchange="actualizarTotalCarrito('total')">
+                    <input type="button" value="Borrar" 
+                        onclick="document.getElementById('item2').remove();
+                        actualizarTotalCarrito('total')">
+                </form>
+            </div>
+
+            <div class="columna" id="item3">
+                <img src="resources/u12s.jpg" alt="articulo3" width=300 height=300>
+                <p class="articulo">Noctua NH-U12S chromax.black</p>
+                <h2 class="precio" id="precio3">69,99€</h2>
+                <form>
+                    <label for="num3">Cantidad:</label><br>
+                    <input type="number" id="num3" name="num" value="1" min="1" onchange="actualizarTotalCarrito('total')">
+                    <input type="button" value="Borrar" 
+                        onclick="document.getElementById('item3').remove();
+                        actualizarTotalCarrito('total')">
+                </form>
+            </div>
+
+            <div class="columna" id="item4">
+                <img src="resources/vengeance3200.jpg" alt="articulo4" width=300 height=300>
+                <p class="articulo">Corsair Vengeance RGB DDR4 3200MHz 16GB 2x8GB CL16</p>
+                <h2 class="precio" id="precio4">87,99€</h2>
+                <form>
+                    <label for="num4">Cantidad:</label><br>
+                    <input type="number" id="num4" name="num" value="1" min="1" onchange="actualizarTotalCarrito('total')">
+                    <input type="button" value="Borrar" 
+                        onclick="document.getElementById('item4').remove();
+                        actualizarTotalCarrito('total')">
+                </form>
+            </div>
+        </div>  
+
+        <div class="fila">
+            <div class="columna" id="item5">
+                <img src="resources/h510.jpg" alt="articulo5" width=300 height=300>
+                <p class="articulo">NZXT H510 Cristal Templado USB 3.1 Negro Mate</p>
+                <h2 class="precio" id="precio5">79,98€</h2>
+                <form>
+                    <label for="num5">Cantidad:</label><br>
+                    <input type="number" id="num5" name="num" value="1" min="1" onchange="actualizarTotalCarrito('total')">
+                    <input type="button" value="Borrar" 
+                        onclick="document.getElementById('item5').remove();
+                        actualizarTotalCarrito('total')">
+                </form>
+            </div>
+            
+            <div class="columna" id="item6">
+                <img src="resources/zotac3080.jpg" alt="articulo6" width=300 height=300>
+                <p class="articulo">Zotac GAMING RTX-3080 Trinity 10GB GDDR6X</p>
+                <h2 class="precio" id="precio6">739,90€</h2>
+                <form>
+                    <label for="num6">Cantidad:</label><br>
+                    <input type="number" id="num6" name="num" value="1" min="1" onchange="actualizarTotalCarrito('total')">
+                    <input type="button" value="Borrar" 
+                        onclick="document.getElementById('item6').remove();
+                        actualizarTotalCarrito('total')">
+                </form>
+            </div>
+
+            <div class="columna" id="item7">
+                <img src="resources/rm750.jpg" alt="articulo7" width=300 height=300>
+                <p class="articulo">Corsair RM750 750W 80 Plus Gold Full Modular</p>
+                <h2 class="precio" id="precio7">114,99€</h2>
+                <form>
+                    <label for="num7">Cantidad:</label><br>
+                    <input type="number" id="num7" name="num" value="1" min="1" onchange="actualizarTotalCarrito('total')">
+                    <input type="button" value="Borrar" 
+                        onclick="document.getElementById('item7').remove();
+                        actualizarTotal('total')">
+                </form>
+            </div>
+
+            <div class="columna" id="item8">
+                <img src="resources/860evo-500.jpg" alt="articulo8" width=300 height=300>
+                <p class="articulo">Samsung 860 EVO Basic SSD 500GB SATA3</p>
+                <h2 class="precio" id="precio8">76€</h2>
+                <form>
+                    <label for="num8">Cantidad:</label><br>
+                    <input type="number" id="num8" name="num" value="1" min="1" onchange="actualizarTotalCarrito('total')">
+                    <input type="button" value="Borrar" 
+                        onclick="document.getElementById('item8').remove();
+                        actualizarTotal('total')">
+                </form>
+            </div>
+        </div> 
+        <h2 class="seccion" id="total">TOTAL: 1638,64€</h2> 
+        <div class="fila">
+
+            <div class="columna">
+                <button class="boton_carrito"
+                onclick="alert('Lo sentimos, nuestros servidores están ocupados en este momento.\nPor favor, inténtelo más tarde')">
+                    <span>Realizar pedido</span>
+                </button>
+            </div>
+            <div class="columna">
+                <button class="boton_carrito" id="borrar_todo"
+                onclick="limpiarCarrito('total')">
+                    <span>Borrar todo</span>
+                </button>
+            </div>
+        </div> 
+
+        <div class="footer">
+            <p>PC Actual - Calle Wallaby, 42, Sidney, AUSTRALIA</p>
+            <a href="index.html">Inicio | </a>
+            <a href="contacto.html">Contacto | </a>
+            <a href="faq.html">FAQ</a>
+        </div>     
+    </body>
+</html>

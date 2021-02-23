@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="plantilla.css"/>
+        <script src="script.js"></script>
+        <title>PC Actual | Configurador</title>
+    </head>
+    <body>
+        <div class="cabecera">
+            <img id="logo" src="resources/logo.png" alt="logo">
+        </div>
+
+        <div class="topnav">
+            <a class="enlace" href="index.html">Inicio</a>
+            <a class="enlace" href="categorias.html">Categorías</a>
+            <a class="enlace" href="configurador.html">Configurador</a>
+            <a class="enlace" href="componentes.html">Componentes</a>
+            <a class="enlace" href="ordenadores.html">Ordenadores</a>
+            <a class="enlace" href="perifericos.html">Periféricos</a>
+            <a class="enlace" href="login.html">Iniciar sesión</a>
+            <a class="enlace" href="micuenta.html">Mi cuenta</a>
+            <a class="carrito" href="carrito.html"><img src="resources/carrito.png" alt="logo" width=54 height=54></a>
+            <form>
+                <input type="search" name="busqueda" placeholder="Buscar...">
+            </form>
+        </div>
+
+        <div class="fila">
+            <div class="columna_grande">
+                <p class="imagenes">
+                    <img id="img_cpu" src="resources/vacio.jpg" alt="cpu" width=200 height=200><br><br>
+                    <img id="img_placa_base" src="resources/vacio.jpg" alt="placa_base" width=200 height=200><br><br>
+                    <img id="img_ventilador" src="resources/vacio.jpg" alt="cpu" width=200 height=200><br><br>
+                    <img id="img_ram" src="resources/vacio.jpg" alt="cpu" width=200 height=200><br><br>
+                    <img id="img_caja" src="resources/vacio.jpg" alt="cpu" width=200 height=200><br><br>
+                    <img id="img_gpu" src="resources/vacio.jpg" alt="cpu" width=200 height=200><br><br>
+                    <img id="img_psu" src="resources/vacio.jpg" alt="cpu" width=200 height=200><br><br>
+                    <img id="img_hd1" src="resources/vacio.jpg" alt="cpu" width=200 height=200><br><br>
+                    <img id="img_hd2" src="resources/vacio.jpg" alt="cpu" width=200 height=200><br><br>
+                </p>
+            </div>
+
+            <div class="columna_grande">
+                <form class="formularios">
+                    <h2>Configurador de PC</h2><br>
+                    <p>Selecciona la configuración:</p>
+                    <select id="configuracion" name="configuracion" 
+                            onchange="actualizarPlataforma('configuracion','cpu','placa_base','total')">
+                        <option value="vacio">-</option>
+                        <option value="am4">AMD Socket AM4</option>
+                        <option value="1151">Intel Socket 1151 Gen 8/9</option>
+                    </select><br><br>
+
+                    <p>Procesador</p>
+                    <h2 class="precio" id="precio_cpu">0,00€</h2>
+                    <select id="cpu" name="cpu"
+                            onchange="actualizarComponente('cpu', 'img_cpu', 'precio_cpu');
+                                      actualizarTotal('total')">
+                        <option value="vacio">-</option>
+                        <option value="r3600x">AMD Ryzen 5 3600X</option>
+                        <option value="r3700x">AMD Ryzen 7 3700X</option>
+                        <option value="r3900x">AMD Ryzen 9 3900X</option>
+                        <option value="i5-9600k">Intel Core i5 9600K</option>
+                        <option value="i7-9700k">Intel Core i7 9700K</option>
+                        <option value="i9-9900k">Intel Core i9 9900K</option>
+                    </select><br><br>
+
+                    <p>Placa base</p>
+                    <h2 class="precio" id="precio_placa_base">0,00€</h2>
+                    <select id="placa_base" name="placa_base"
+                            onchange="actualizarComponente('placa_base', 'img_placa_base', 'precio_placa_base');
+                                      actualizarTotal('total')">
+                        <option value="vacio">-</option>
+                        <option value="msi-mpg-b550-gaming-plus">MSI MPG B550 GAMING PLUS</option>
+                        <option value="msi-b450-gaming-plus-max">MSI B450 Gaming Plus MAX</option>
+                        <option value="msi-b450-tomahawk-max">MSI B450 Tomahawk Max</option>
+                        <option value="asus-rog-strix-z390-gaming">Asus Rog Strix Z390 Gaming</option>
+                        <option value="gigabyte-z390-gaming-x">Gigabyte Z390 Gaming X</option>
+                    </select><br><br>
+
+                    <p>Ventilador CPU</p>
+                    <h2 class="precio" id="precio_ventilador">0,00€</h2>
+                    <select id="ventilador" name="ventilador"
+                            onchange="actualizarComponente('ventilador', 'img_ventilador', 'precio_ventilador');
+                                      actualizarTotal('total')">
+                        <option value="vacio">-</option>
+                        <option value="u12s">Noctua NH-U12S chromax.black</option>
+                        <option value="d15">Noctua NH-D15 chromax.black</option>
+                        <option value="212x">CoolerMaster 212x</option>
+                        <option value="x53">NZXT X53 Kraken</option>
+                        <option value="x63">NZXT X63 Kraken</option>
+                        <option value="x73">NZXT X73 Kraken</option>
+                    </select><br><br>
+
+                    <p>Memoria RAM</p>
+                    <h2 class="precio" id="precio_ram">0,00€</h2>
+                    <select id="ram" name="ram"
+                    onchange="actualizarComponente('ram', 'img_ram', 'precio_ram');
+                                      actualizarTotal('total')">
+                        <option value="vacio">-</option>
+                        <option value="vengeance3200">Corsair Vengeance RGB DDR4 3200MHz 16GB 2x8GB CL16</option>
+                        <option value="tridentz3200">GSkill TridentZ 3200Mhz 16GB 2x8GB CL15</option>
+                        <option value="hyperx3200-8">Kingston HyperX Fury Black 3200Mhz 8GB 2x4GB CL16</option>
+                        <option value="hyperx3200-16">Kingston HyperX Fury Black 3200Mhz 16GB 2x8GB CL16</option>
+                    </select><br><br>
+
+                    <p>Caja/Torre</p>
+                    <h2 class="precio" id="precio_caja">0,00€</h2>
+                    <select id="caja" name="caja"
+                    onchange="actualizarComponente('caja', 'img_caja', 'precio_caja');
+                    actualizarTotal('total')">
+                        <option value="vacio">-</option>
+                        <option value="h510">NZXT H510 Cristal Templado USB 3.1 Negro Mate</option>
+                        <option value="s340">NZXT S340 Cristal Templado USB 3.1 Rojo</option>
+                        <option value="110r">Corsair 110 R Cristal Templado USB 3.0 Negro</option>
+                        <option value="pc-o11">Lian Li PC-O11 Dynamic Cristal Templado USB 3.1 Blanca</option>
+                    </select><br><br>
+
+                    <p>Tarjeta gráfica</p>
+                    <h2 class="precio" id="precio_gpu">0,00€</h2>
+                    <select id="gpu" name="gpu"
+                    onchange="actualizarComponente('gpu', 'img_gpu', 'precio_gpu');
+                                      actualizarTotal('total')">
+                        <option value="vacio">-</option>
+                        <option value="zotac3080">Zotac GAMING RTX-3080 Trinity 10GB GDDR6X</option>
+                        <option value="zotac3090">Zotac GAMING RTX-3090 Trinity 24GB GDDR6X</option>
+                        <option value="msi3080">MSI Geforce RTX-3080 GAMING X TRIO 10GB GDDR6X</option>
+                        <option value="msi3090">MSI Geforce RTX-3090 GAMING X TRIO 10GB GDDR6X</option>
+                        <option value="msi5700xt">MSI Radeon RX 5700 XT Gaming X 8GB GDDR6</option>
+                        <option value="asus3080">Asus TUF Geforce RTX-3080 OC 10GB GDDR6X</option>
+                        <option value="asus3090">Asus TUF Geforce RTX-3090 OC 24GB GDDR6X</option>
+                        <option value="asus5700xt">Asus Dual Radeon RX 5700 XT EVO OC 8GB GDDR6</option>
+                    </select><br><br>
+
+                    <p>Fuente de alimentación</p>
+                    <h2 class="precio" id="precio_psu">0,00€</h2>
+                    <select id="psu" name="psu"
+                    onchange="actualizarComponente('psu', 'img_psu', 'precio_psu');
+                                      actualizarTotal('total')">
+                        <option value="vacio">-</option>
+                        <option value="rm750">Corsair RM750 750W 80 Plus Gold Full Modular</option>
+                        <option value="rm650">Corsair RM650 650W 80 Plus Gold Full Modular</option>
+                        <option value="cx650">Corsair CX650 650W 80 Plus Bronze</option>
+                        <option value="cx550">Corsair CX550 550W 80 Plus Bronze</option>
+                        <option value="s12-650">Seasonic S12II-650 650W 80 Plus Bronze</option>
+                    </select><br><br>
+
+                    <p>Disco duro</p>
+                    <h2 class="precio" id="precio_hd1">0,00€</h2>
+                    <select id="hd1" name="hd1"
+                    onchange="actualizarComponente('hd1', 'img_hd1', 'precio_hd1');
+                                      actualizarTotal('total')">
+                        <option value="vacio">-</option>
+                        <option value="860evo-500">Samsung 860 EVO Basic SSD 500GB SATA3</option>
+                        <option value="860evo-1">Samsung 860 EVO Basic SSD 1TB SATA3</option>
+                        <option value="860pro-500">Samsung 860 PRO SSD 500GB SATA3</option>
+                        <option value="a400">Kingston A400 SSD 240GB</option>
+                        <option value="seagate1">Seagate BarraCuda 3.5" SSD 1TB SATA3</option>
+                    </select><br><br>
+
+                    <p>Disco duro secundario</p>
+                    <h2 class="precio" id="precio_hd2">0,00€</h2>
+                    <select id="hd2" name="hd2"
+                    onchange="actualizarComponente('hd2', 'img_hd2', 'precio_hd2');
+                                      actualizarTotal('total')">
+                        <option value="vacio">-</option>
+                        <option value="860evo-500">Samsung 860 EVO Basic SSD 500GB SATA3</option>
+                        <option value="860evo-1">Samsung 860 EVO Basic SSD 1TB SATA3</option>
+                        <option value="860pro-500">Samsung 860 PRO SSD 500GB SATA3</option>
+                        <option value="a400">Kingston A400 SSD 240GB</option>
+                        <option value="seagate1">Seagate BarraCuda 3.5" SSD 1TB SATA3</option>
+                    </select><br><br>
+
+                    <br><br><h2 id='total'>TOTAL: 0,00€</h2>
+                    <input type="submit" value="Añadir al carrito"> 
+                </form> 
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>PC Actual - Calle Wallaby, 42, Sidney, AUSTRALIA</p>
+            <a href="index.html">Inicio | </a>
+            <a href="contacto.html">Contacto | </a>
+            <a href="faq.html">FAQ</a>
+        </div>     
+    </body>
+</html>
